@@ -1,7 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var datetime = require('node-datetime');
 
 var router = express.Router();
 
@@ -35,17 +34,11 @@ router.post('/', function (req, res, next) {
   
   console.log("client IP is: " + ip);
 
-  console.log(req.body.nome);
-
-  var data = datetime.create();
-
-  console.log(data);
-
   var lead = new Lead({
     nome: nome,
     email: email,
     ip: ip,
-    data: data._created
+    data: new Date().getTime()
   });
 
   var dataLocal = Date(data._created).toLocaleString();

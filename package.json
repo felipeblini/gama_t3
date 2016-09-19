@@ -5,7 +5,7 @@
   "engines": {
     "node": "5.9.1"
   },
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
@@ -42,7 +42,6 @@
     "load-grunt-tasks": "^3.2.0",
     "node-datetime": "^1.0.0",
     "request": "^2.60.0",
-    "request-ip": "^1.2.2",
     "time-grunt": "^1.2.1"
   }
 }
