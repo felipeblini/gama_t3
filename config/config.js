@@ -3,12 +3,13 @@ var path = require('path'),
     env = process.env.NODE_ENV || 'development';
 
 var config = {
+  port: process.env.PORT || 3000,
   development: {
     root: rootPath,
     app: {
       name: 'cabify-time3'
     },
-    port: 9000,
+    port: this.port,
     //db: 'mongodb://localhost/d4u-development'
     db: 'mongodb://felipe:ga$$369@ds033116.mlab.com:33116/d4udb'
   },
@@ -18,7 +19,7 @@ var config = {
     app: {
       name: 'cabify-time3'
     },
-    port: 3000,
+    port: this.port,
     db: 'mongodb://localhost/d4u-test'
   },
 
@@ -27,7 +28,7 @@ var config = {
     app: {
       name: 'cabify-time3'
     },
-    port: 3000,
+    port: this.port,
     db: 'mongodb://felipe:ga$$369@ds033116.mlab.com:33116/d4udb'
   }
 };
