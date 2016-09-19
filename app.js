@@ -29,9 +29,7 @@ var app = express();
 
 require('./config/express')(app, config);
 
-const PORT = config.port;
-
-app.listen(PORT, () => {
-    console.log(`App is running on port ${ PORT }`);
+app.listen(config.port, () => {
+    console.log(`App is running on port ${ config.port }`);
 });
 
