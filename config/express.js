@@ -17,12 +17,14 @@ module.exports = function(app, config) {
   var environment = {
     // if it is running on localhost, environment.dev will be true
     // otherwise environment.dev will be false
-    dev: !app.get('env') === 'development'
+    dev: app.get('env') === 'development'
     // dev: !app.get('env') === 'development' -> uncomment to test the prod environment
   }
 
   var envPath = environment.dev ? '/app' : '/www';
 
+  envPath = '/app';
+  
   console.log('environment:', environment.dev ? 'development' : 'production');
   console.log('serving on folder:', envPath);
   
