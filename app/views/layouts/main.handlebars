@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>{{title }}</title>
 
   <!-- build:css(.) assets/css/style.concat.min.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="components/materialize/bin/materialize.css" />
   <!-- endbower -->
+  
   <link rel="stylesheet" href="sass/output.css">
   <!-- endbuild -->
 
@@ -18,7 +19,17 @@
 </head>
 <body>
 
+  <!-- Pre Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+ 
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+
   {{{body}}}
+
+  <script type="text/javascript" src="https://use.fontawesome.com/aed972c01e.js"></script>
 
   <!-- build:js(.) assets/js/scripts.concat.min.js -->
   <!-- bower:js -->

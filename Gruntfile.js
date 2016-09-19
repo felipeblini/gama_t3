@@ -81,6 +81,16 @@ module.exports = function (grunt) {
           }
         ]
       },
+      imgs: {
+        files: [
+          { 
+            expand: true,
+            cwd: 'app/assets/',
+            src: ['img/**/*'], 
+            dest: 'www/views/assets'
+          }
+        ]
+      },
       move_assets_outside_www_views: {
         files: [
           { 
@@ -203,6 +213,7 @@ module.exports = function (grunt) {
     'cssmin',
     'usemin',
     'string-replace:adjust_assets_ref_after_deploy',
+    'copy:imgs',
     'copy:move_assets_outside_www_views',
     'clean:remove_assest_www_views'
   ]);
