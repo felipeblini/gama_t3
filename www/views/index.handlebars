@@ -1,0 +1,16 @@
+{{> head}}
+
+<form action="/salvalead" method="POST">
+    <div class="input-field">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+    </div>
+    <div class="input-field">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+        Saiba Mais
+    </button>
+    {{ erro }}
+</form>
