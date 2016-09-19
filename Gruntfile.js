@@ -71,7 +71,7 @@ module.exports = function (grunt) {
     },
     // copia as views originais para a pasta de producao
     copy: {
-      task: {
+      views: {
         files: [
           { 
             expand: true,
@@ -80,12 +80,25 @@ module.exports = function (grunt) {
             dest: 'www/views/'
           }
         ]
+      },
+      move_assets_outside_www_views: {
+        files: [
+          { 
+            expand: true,
+            cwd: 'www/views/',
+            src: ['assets/**/*'], 
+            dest: 'www/'
+          }
+        ]
       }
     },
     // exclui as views da pasta de producao antes de copiar novamente
     clean: {
-      task: {
+      www: {
         src: 'www/'
+      },
+      remove_assest_www_views: {
+        src: 'www/views/assets'
       }
     },
     // replace nas referencias prs spontsr os csminhod absolutos
@@ -126,6 +139,24 @@ module.exports = function (grunt) {
             replacement: '<link rel="stylesheet" href=\"components'
           }]
         }
+      },
+      adjust_assets_ref_after_deploy: {
+        files: [{
+          expand: true,
+          cwd: 'www/views/layouts/',
+          src: '**/*.handlebars',
+          dest: 'www/views/layouts/'
+        }],
+        options: {
+          replacements: [{
+            pattern: /<script src=\"assets/g,
+            replacement: '<script src=\"'
+          },
+          {
+            pattern: /<link rel="stylesheet" href=\"assets/g,
+            replacement: '<link rel="stylesheet" href=\"'
+          }]
+        }
       }
     },
     // altera o html principal na producao para apontar para os arquivos
@@ -162,14 +193,18 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('deploy', [
-    'clean',
-    'copy',
-    'string-replace',
+    'clean:www',
+    'copy:views',
+    'string-replace:dist',
+    'string-replace:bower',
     'useminPrepare',
     'concat',
     'uglify',
     'cssmin',
-    'usemin'
+    'usemin',
+    'string-replace:adjust_assets_ref_after_deploy',
+    'copy:move_assets_outside_www_views',
+    'clean:remove_assest_www_views'
   ]);
 
   grunt.registerTask('default', [

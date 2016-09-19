@@ -34,14 +34,16 @@ router.post('/', function (req, res, next) {
   
   console.log("client IP is: " + ip);
 
+  var data = new Date().getTime();
+  
   var lead = new Lead({
     nome: nome,
     email: email,
     ip: ip,
-    data: new Date().getTime()
+    data: data 
   });
 
-  var dataLocal = Date(data._created).toLocaleString();
+  var dataLocal = Date(data).toLocaleString();
 
   console.log('data', dataLocal);
 

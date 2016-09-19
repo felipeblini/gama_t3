@@ -21,19 +21,19 @@ module.exports = function(app, config) {
     // dev: !app.get('env') === 'development' -> uncomment to test the prod environment
   }
 
-  var envPath = environment.dev ? '/app' : '/www';
+  var environmentRoot = environment.dev ? '/app' : '/www';
 
-  envPath = '/app';
-  
+  //environmentRoot = '/app';
+
   console.log('environment:', environment.dev ? 'development' : 'production');
-  console.log('serving on folder:', envPath);
+  console.log('serving on folder:', environmentRoot);
   
   app.engine('handlebars', exphbs({
-    layoutsDir: config.root + envPath + '/views/layouts/',
+    layoutsDir: config.root + environmentRoot + '/views/layouts/',
     defaultLayout: 'main',
-    partialsDir: [config.root + envPath + '/views/partials/']
+    partialsDir: [config.root + environmentRoot + '/views/partials/']
   }));
-  app.set('views', config.root + envPath + '/views');
+  app.set('views', config.root + environmentRoot + '/views');
   app.set('view engine', 'handlebars');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
@@ -45,11 +45,13 @@ module.exports = function(app, config) {
   app.use(cookieParser());
   app.use(compress());
 
-  envPath += environment.dev ? '/assets' : '/views';
+  //environmentRoot += environment.dev ? '/assets' : '/views/assets';
 
-  console.log('static assets:', config.root + envPath);
+  var staticFolder = environmentRoot + '/assets';
+
+  console.log('static assets:', config.root + staticFolder);
   
-  app.use(express.static(config.root + envPath));
+  app.use(express.static(config.root + staticFolder));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
