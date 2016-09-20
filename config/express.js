@@ -38,7 +38,6 @@ module.exports = function(app, config) {
   app.set('views', config.root + environmentRoot + '/views');
   app.set('view engine', 'handlebars');
 
-  // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
@@ -54,6 +53,7 @@ module.exports = function(app, config) {
   console.log('static assets:', config.root + staticFolder);
   
   app.use(express.static(config.root + staticFolder));
+  app.use(favicon(config.root + staticFolder + '/img/favicon.ico'));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');

@@ -19,12 +19,10 @@
   <script src="http://localhost:35729/livereload.js"></script>
   <!-- endbuild -->
 </head>
-<body>
-
-  {{{body}}}
-
-  {{> footer }}
-
+<body class="{{title}}">
+  <div id="wrapper">
+    {{{body}}}
+  </div>
   <!-- build:js(.) assets/js/scripts.concat.min.js -->
   <!-- bower:js -->
   <script src="components/jquery/dist/jquery.js"></script>
