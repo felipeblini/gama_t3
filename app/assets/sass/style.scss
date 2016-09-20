@@ -7,19 +7,21 @@
 
  $default-color: #000;
 
-.default_color{background-color: $default-color !important}
+ .default_color{background-color: $default-color !important}
 
-.default_color_text{color: $default-color !important}
+ .default_color_text{color: $default-color !important}
 
-.icon-block {
+ .icon-block {
     padding: 0 15px;
-}
+ }
 
 .container-nav {
-  padding: 8px
+    padding: 8px
 }
 
-.container-valores {padding: 4rem;}
+.container-valores {
+    padding: 4rem;
+}
 
 #index-banner {
     min-height: 632px;
@@ -246,7 +248,7 @@ nav a.button-collapse {
 }
 
 .card-avatar .card-content i {
-   font-size: 1.5rem;
+font-size: 1.5rem;
 }
 
 .card-avatar .card-content .card-title {
@@ -259,4 +261,106 @@ nav a.button-collapse {
 
 footer.page-footer {
     margin-top: 0px !important;
+}
+
+#index-banner {
+    background-image: url(../img/banner-home.jpg);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-position:center;
+}
+
+.container-nav {
+    padding: .5em;
+}
+
+.title-form {
+    font-size: 24px;    
+}
+
+.generic-box {
+    margin-top: 1em;
+}
+
+.generic-box img {
+    height: 60px !important;
+}
+
+.container-valores {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.form-row {
+    margin-bottom: 0px !important;
+}
+
+.rodape {
+    margin-top: 0px !important;
+    border-top : 1px solid yellow;
+}
+
+.boxes {
+    margin-bottom: 0px;
+}
+
+.f-row {
+    margin-bottom: 0px;
+}
+
+.card-panel {
+    margin: 0px;
+}
+
+.error {
+    color: #fff;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
+}
+
+.slideanim {visibility:hidden;}
+
+.slide {
+
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    
+    visibility: visible; 
+}
+
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
 }

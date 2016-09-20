@@ -3,27 +3,40 @@
 <!--Hero-->
 <div class="section no-pad-bot" id="index-banner">
     <div>
-        <div class="row">
-            <div class="col s12 m6  offset-m6">
-                <form action="/salvalead" method="POST">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <div class="input-field">
-                                <label for="nome">Nome</label>
-                                <input type="text" name="nome" required id="nome">
-                            </div>
-                            <div class="input-field">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" required id="email">
-                            </div>
+        <div class="row f-row">
+            <div class="col s12 m6 offset-m6">
+                <div class="row form-row">
+                    <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <div class="erromessage hide">{{ erro.message }}</div>
+                        <div class="card-panel red lighten-2 error hide">
+                            {{ erro.message }}<br>
+                            <small>{{ erro.submessage }}</small>
                         </div>
-                        <div class="card-action">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">
-                                Saiba Mais
-                            </button> {{ erro.message }} {{ erro.submessage }}
-                        </div>
+
+                        <form action="/salvalead" method="POST" autocomplete="off">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-content white-text">
+                                    <span class="title-form center-align"> Cadastre-se </span>
+                                    <div class="input-field">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <label for="nome">Nome</label>
+                                        <input type="text" name="nome" required id="nome" minlength=3>
+                                    </div>
+                                    <div class="input-field">
+                                        <i class="material-icons prefix">email</i>
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" class="with-gap" required>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -32,28 +45,36 @@
 <!--Intro and service-->
 <div>
     <div class="container-valores">
-        <div class="row">
-            <div class="col s12 m4 l4">
+        <div class="row boxes">
+            <div class="col m12 l3 generic-box slideanim">
                 <div class="center promo promo-example">
-                    <i class="fa fa-gift" aria-hidden="true"></i>
-                    <h5 class="promo-caption">Corridas mais Baratas e sem Surpresa!</h5>
-                    <p class="light center">Solicite seu motorista através da nossa plataforma e já saiba quanto você vai gastar, independente dos
+                    <img src="../img/volante.png" alt="volante" class="icon-box">
+                    <h5 class="promo-caption">Corridas mais baratas e sem surpresas</h5>
+                    <p class="light center">Na DoDrive você já sabe o quanto vai gastar antes de entrar no carro, independente dos
                         problemas que podem acontecer no seu caminho!</p>
                 </div>
             </div>
-            <div class="col s12 m4 l4">
+            <div class="col m12 l3 generic-box slideanim">
                 <div class="center promo promo-example">
-                    <i class="fa fa-usd" aria-hidden="true"></i>
-                    <h5 class="promo-caption">Renda Extra e Tempo Flexível</h5>
-                    <p class="light center">Você que quer ser nosso motorista, mesmo não tendo um veículo ou que tenha um e queira por um motorista
-                        no seu lugar, então o drive4u é pra você!</p>
+                    <img src="../img/passageiro.png" alt="vpassageiro" class="icon-box">
+                    <h5 class="promo-caption">Renda extra e flexibilidade</h5>
+                    <p class="light center">Você quer ganhar uma renda extra dirigindo o seu carro?
+                        Na DoDrive você ganha mais por passageiro que a concorrência</p>
                 </div>
             </div>
-
-            <div class="col s12 m4 l4">
+            <div class="col m12 l3 generic-box slideanim">
                 <div class="center promo promo-example">
-                    <i class="fa fa-building-o" aria-hidden="true"></i>
-                    <h5 class="promo-caption">Empresas: Transporte Clienes e Funcionários</h5>
+                    <img src="../img/passageiro.png" alt="vpassageiro" class="icon-box">
+                    <h5 class="promo-caption">Seja nosso motorista sem precisar ter carro</h5>
+                    <p class="light center">Quer ganhar dinheiro dirigindo mas não tem um carro? Na DoDrive você pode pegar um carro emprestado e começar a dirigir na hora!
+                        Se você tem um carro também pode colocar um motorista nele e começar a faturar.
+                    </p>
+                </div>
+            </div>
+            <div class="col m12 l3 generic-box slideanim">
+                <div class="center promo promo-example">
+                    <img src="../img/empresa.png" alt="empresa" class="icon-box">
+                    <h5 class="promo-caption">Empresas: Transporte seus Clientes e Funcionários</h5>
                     <p class="light center">Contrate nossos serviços de transporte e saiba exatamente quem e quanto a sua empresa está gastando com
                         transporte particular.</p>
                 </div>
@@ -61,3 +82,12 @@
         </div>
     </div>
 </div>
+
+<footer class="page-footer black rodape">
+  <div class="footer-copyright">
+    <div class="container">
+        © 2016 Todos os direitos reservados
+        <img src="../img/logo-2.png" class="right" alt="logo-dodrive">
+    </div>
+  </div>
+</footer>
