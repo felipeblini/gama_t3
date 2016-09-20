@@ -4,26 +4,46 @@
 <div class="section no-pad-bot" id="index-banner">
     <div>
         <div class="row">
-            <div class="col s12 m6  offset-m6">
-                <form action="/salvalead" method="POST">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <div class="input-field">
-                                <label for="nome">Nome</label>
-                                <input type="text" name="nome" required id="nome">
+            <div class="col s12 m6 offset-m6">
+                <div class="row">
+                    <div class="col m8 offset-m2 l8 offset-l2">
+                        <form action="/salvalead" method="POST">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-content white-text">
+                                    <span class="title-form"> Cadastre-se </span>
+                                    <div class="input-field">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" name="nome" required id="nome">
+                                    </div>
+                                    <div class="input-field">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" class="with-gap">
+                                    </div>
+                                    <div class="input-field">
+                                        <span> Categoria </span>
+                                        <p>
+                                          <input name="motorista" type="radio" id="motorista" class="with-gap" />
+                                          <label for="motorista">Motorista</label>
+                                        </p>
+                                        <p>
+                                          <input name="passageiro" type="radio" id="passageiro" class="with-gap"/>
+                                          <label for="passageiro">Passageiro</label>
+                                        </p>
+                                        <p>
+                                            <input name="empresa" type="radio" id="empresa" class="with-gap"/>
+                                            <label for="empresa">Empresa</label>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                                        Cadastrar
+                                    </button> {{ erro }}
+                                </div>
                             </div>
-                            <div class="input-field">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" required id="email">
-                            </div>
-                        </div>
-                        <div class="card-action">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">
-                                Saiba Mais
-                            </button> {{ erro }}
-                        </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -53,7 +73,7 @@
             <div class="col s12 m4 l4">
                 <div class="center promo promo-example">
                     <i class="fa fa-building-o" aria-hidden="true"></i>
-                    <h5 class="promo-caption">Empresas: Transporte Clienes e Funcionários</h5>
+                    <h5 class="promo-caption">Empresas: Transporte Clientes e Funcionários</h5>
                     <p class="light center">Contrate nossos serviços de transporte e saiba exatamente quem e quanto a sua empresa está gastando com
                         transporte particular.</p>
                 </div>
@@ -61,3 +81,12 @@
         </div>
     </div>
 </div>
+
+<footer class="page-footer black rodape">
+  <div class="footer-copyright">
+    <div class="container">
+        © 2016 Todos os direitos reservados
+        <img src="../img/logo-2.png" class="right" alt="logo-dodrive">
+    </div>
+  </div>
+</footer>
