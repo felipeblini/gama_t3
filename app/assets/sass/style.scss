@@ -13,13 +13,15 @@
 
  .icon-block {
     padding: 0 15px;
-}
+ }
 
 .container-nav {
-  padding: 8px
+    padding: 8px
 }
 
-.container-valores {padding: 4rem;}
+.container-valores {
+    padding: 4rem;
+}
 
 #index-banner {
     min-height: 632px;
@@ -246,7 +248,7 @@ nav a.button-collapse {
 }
 
 .card-avatar .card-content i {
-   font-size: 1.5rem;
+font-size: 1.5rem;
 }
 
 .card-avatar .card-content .card-title {
@@ -319,16 +321,17 @@ footer.page-footer {
 
 /* valid color */
 .input-field input[type=text].valid {
-   border-bottom: 1px solid #000;
-   box-shadow: 0 1px 0 0 #000;
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
 }
 /* invalid color */
 .input-field input[type=text].invalid {
-   border-bottom: 1px solid #000;
-   box-shadow: 0 1px 0 0 #000;
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
 }
 
 .slideanim {visibility:hidden;}
+
 .slide {
 
     animation-name: slide;

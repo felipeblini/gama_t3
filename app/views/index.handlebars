@@ -4,15 +4,13 @@
 <div class="section no-pad-bot" id="index-banner">
     <div>
         <div class="row f-row">
-            <div class="col 12 m6"> 
-                <h2>
-            </div>
-
             <div class="col s12 m6 offset-m6">
                 <div class="row form-row">
                     <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <div class="erromessage hide">{{ erro.message }}</div>
                         <div class="card-panel red lighten-2 error hide">
-                            {{ erro }}
+                            {{ erro.message }}<br>
+                            <small>{{ erro.submessage }}</small>
                         </div>
 
                         <form action="/salvalead" method="POST" autocomplete="off">
@@ -33,7 +31,7 @@
                                 <div class="card-action">
                                     <button class="btn waves-effect waves-light" type="submit" name="action">
                                         Enviar
-                                    </button> {{ erro }}
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -48,26 +46,35 @@
 <div>
     <div class="container-valores">
         <div class="row boxes">
-            <div class="col s12 m4 l4 generic-box">
+            <div class="col m12 l3 generic-box slideanim">
                 <div class="center promo promo-example">
                     <img src="../img/volante.png" alt="volante" class="icon-box">
-                    <h5 class="promo-caption">Corridas mais Baratas e sem Surpresa!</h5>
-                    <p class="light center">Solicite seu motorista através da nossa plataforma e já saiba quanto você vai gastar, independente dos
+                    <h5 class="promo-caption">Corridas mais baratas e sem surpresas</h5>
+                    <p class="light center">Na DoDrive você já sabe o quanto vai gastar antes de entrar no carro, independente dos
                         problemas que podem acontecer no seu caminho!</p>
                 </div>
             </div>
-            <div class="col s12 m4 l4 generic-box">
+            <div class="col m12 l3 generic-box slideanim">
                 <div class="center promo promo-example">
                     <img src="../img/passageiro.png" alt="vpassageiro" class="icon-box">
-                    <h5 class="promo-caption">Renda Extra e Tempo Flexível</h5>
-                    <p class="light center">Você que quer ser nosso motorista, mesmo não tendo um veículo ou que tenha um e queira por um motorista
-                        no seu lugar, então o drive4u é pra você!</p>
+                    <h5 class="promo-caption">Renda extra e flexibilidade</h5>
+                    <p class="light center">Você quer ganhar uma renda extra dirigindo o seu carro?
+                        Na DoDrive você ganha mais por passageiro que a concorrência</p>
                 </div>
             </div>
-            <div class="col s12 m4 l4 generic-box">
+            <div class="col m12 l3 generic-box slideanim">
+                <div class="center promo promo-example">
+                    <img src="../img/passageiro.png" alt="vpassageiro" class="icon-box">
+                    <h5 class="promo-caption">Seja nosso motorista sem precisar ter carro</h5>
+                    <p class="light center">Quer ganhar dinheiro dirigindo mas não tem um carro? Na DoDrive você pode pegar um carro emprestado e começar a dirigir na hora!
+                        Se você tem um carro também pode colocar um motorista nele e começar a faturar.
+                    </p>
+                </div>
+            </div>
+            <div class="col m12 l3 generic-box slideanim">
                 <div class="center promo promo-example">
                     <img src="../img/empresa.png" alt="empresa" class="icon-box">
-                    <h5 class="promo-caption">Empresas: Transporte Clientes e Funcionários</h5>
+                    <h5 class="promo-caption">Empresas: Transporte seus Clientes e Funcionários</h5>
                     <p class="light center">Contrate nossos serviços de transporte e saiba exatamente quem e quanto a sua empresa está gastando com
                         transporte particular.</p>
                 </div>
