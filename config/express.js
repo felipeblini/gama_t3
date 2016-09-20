@@ -10,6 +10,8 @@ var methodOverride = require('method-override');
 var exphbs  = require('express-handlebars');
 
 module.exports = function(app, config) {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+  
   var env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';

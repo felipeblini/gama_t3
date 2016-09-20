@@ -11,8 +11,7 @@ var config = {
       name: 'cabify-time3'
     },
     port: port,
-    //db: 'mongodb://localhost/d4u-development'
-    db: 'mongodb://felipe:ga$$369@ds033116.mlab.com:33116/d4udb'
+    db: 'mongodb://localhost/dodrive-development'
   },
 
   test: {
@@ -21,7 +20,7 @@ var config = {
       name: 'cabify-time3'
     },
     port: port,
-    db: 'mongodb://localhost/d4u-test'
+    db: 'mongodb://localhost/dodrive-test'
   },
 
   production: {

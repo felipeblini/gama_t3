@@ -6,8 +6,13 @@ var mongoose = require('mongoose');
 mongoose.connect(config.db);
 var db = mongoose.connection;
 
-db.on('connected', function() { console.log('MongoDb connected at ' + config.db); });
-db.on('disconnected', function() { console.log('MongoDb disconnected at ' + config.db); });
+db.on('connected', function() {
+  console.log('MongoDb connected');
+});
+
+db.on('disconnected', function() {
+  console.log('MongoDb disconnected');
+});
 
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db);
