@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var validator = require("email-validator");
 var nodemailer = require('nodemailer');
 var emailExistence = require('email-existence');
-var emailCheck = require('email-check');
+
 
 var Schema = mongoose.Schema;
 
@@ -17,7 +17,8 @@ var LeadSchema = new Schema({
   nome: { type: String, required: true },
   email: { type: String, required: true, index: { unique: true } },
   ip: { type: String, required: true },
-  data: { type: Number }
+  data: { type: Number },
+  email_existence: { type: Boolean }
 });
 
 var Lead = mongoose.model('Lead', LeadSchema);
@@ -27,6 +28,7 @@ router.post('/', function (req, res, next) {
   var email = req.body.email;
   var data = new Date().getTime();
   var ip = "";
+  var email_existence = false;
   var erro = { message: "" };
 
   console.log('received post: { nome: ' + nome + ', email: ' + email + ' }');
@@ -75,91 +77,61 @@ router.post('/', function (req, res, next) {
   // verifica se a conta de email existe
   emailExistence.check(email, function (err, emailExiste) {
     console.log('email existence response: ' + emailExiste);
+    email_existence = emailExiste;
+    salvalead();
+  }); // ./email_existense
 
-    if(!emailExiste) {
-      console.log('checando pela segunda vez');
+  function salvalead() {
+    var newLead = new Lead({
+      nome: nome,
+      email: email,
+      ip: ip,
+      data: data,
+      email_existence: email_existence
+    });
 
-      emailCheck(email).then(function (emailExiste2) {
-        // Returns "true" if the email address exists, "false" if it doesn't. 
-        console.log('email check response: ' + emailExiste2);
+    var dataLocal = Date(data).toLocaleString();
 
-        salvalead();
-        
-      })
-      .catch(function (err) {
-        if (err.message === 'refuse') {
-          console.log('The MX server is refusing requests from your IP address.'); 
+    console.log('data:', dataLocal);
+
+    console.log('lead:', newLead);
+
+    newLead.save(function (e) {
+      if (e) {
+        console.log(e.message);
+
+        if (e.message.indexOf('E11000') > -1) {
+          erro.message = "Este e-mail já está cadastrado";
+          erro.submessage = "";
         } else {
-          console.log('other error' + err.message);
-          // Decide what to do with other errors. 
+          erro.messsubmessageage = "Não foi possível fazer o registro. Por favor tente novamente";
+          erro.submessage = "";
         }
 
-        erro.message = "Parece que esta conta de e-mail não existe. Por favor tente outra";
-        erro.submessage = "Talvez você tenha digitado errado";
+        console.log('erro ao tentar salvar o lead:', erro.message);
 
-        console.log('mensagem ao usuário:', erro.message);
-        
         res.render('index', {
           title: 'Home',
-          erro: { message: erro.message, submessage: erro.submessage } 
+          erro: { message: erro.message, submessage: erro.submessage }
         });
 
         return;
 
-      }); 
-    } // /.if(!emailExiste)
+      } else {
+        console.log('Lead salvo no banco! Enviando email de obrigado para ' + email);
 
-    function salvalead() {
-      var newLead = new Lead({
-        nome: nome,
-        email: email,
-        ip: ip,
-        data: data
-      });
+        sendMail(nome, email);
 
-      var dataLocal = Date(data).toLocaleString();
+        console.log('Awesome: 1 more lead has been saved successfully :)');
 
-      console.log('data:', dataLocal);
+        res.render('obrigado', {
+          title: 'Obrigado',
+        });
 
-      console.log('lead:', newLead);
-
-      newLead.save(function (e) {
-        if (e) {
-          console.log(e.message);
-
-          if (e.message.indexOf('E11000') > -1) {
-            erro.message = "Este e-mail já está cadastrado";
-            erro.submessage = "";
-          } else {
-            erro.messsubmessageage = "Não foi possível fazer o registro. Por favor tente novamente";
-            erro.submessage = "";
-          }
-
-          console.log('erro ao tentar salvar o lead:', erro.message);
-
-          res.render('index', {
-            title: 'Home',
-            erro: { message: erro.message, submessage: erro.submessage }
-          });
-
-          return;
-
-        } else {
-          console.log('Lead salvo no banco! Enviando email de obrigado para ' + email);
-
-          sendMail(nome, email);
-
-          console.log('Awesome: 1 more lead has been saved successfully :)');
-
-          res.render('obrigado', {
-            title: 'Obrigado',
-          });
-
-          return;
-        }
-      }); // ./newLead.save()
-    } // ./function salvaLead()
-  }); // ./email existence
+        return;
+      }
+    }); // ./newLead.save()
+  } // ./function salvaLead()
 
   function sendMail(nome, email) {
     var transporter = nodemailer.createTransport("SMTP", {
