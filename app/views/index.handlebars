@@ -11,37 +11,28 @@
             <div class="col s12 m6 offset-m6">
                 <div class="row form-row">
                     <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <div class="card-panel red lighten-2 error hide">
+                            {{ erro }}
+                        </div>
+
                         <form action="/salvalead" method="POST">
                             <div class="card blue-grey darken-1">
                                 <div class="card-content white-text">
                                     <span class="title-form center-align"> Cadastre-se </span>
                                     <div class="input-field">
+                                        <i class="material-icons prefix">account_circle</i>
                                         <label for="nome">Nome</label>
                                         <input type="text" name="nome" required id="nome">
                                     </div>
                                     <div class="input-field">
+                                        <i class="material-icons prefix">email</i>
                                         <label for="email">Email</label>
-                                        <input type="email" name="email" id="email" class="with-gap" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                                    </div>
-                                    <div class="input-field">
-                                        <span> Categoria </span>
-                                        <p>
-                                          <input name="opcao" type="radio" id="motorista" class="with-gap value="1" />
-                                          <label for="motorista">Motorista</label>
-                                        </p>
-                                        <p>
-                                          <input name="opcao" type="radio" id="passageiro" class="with-gap" value="2"/>
-                                          <label for="passageiro">Passageiro</label>
-                                        </p>
-                                        <p>
-                                            <input name="opcao" type="radio" id="empresa" class="with-gap" value="3"/>
-                                            <label for="empresa">Empresa</label>
-                                        </p>
+                                        <input type="email" name="email" id="email" class="with-gap" required>
                                     </div>
                                 </div>
                                 <div class="card-action">
                                     <button class="btn waves-effect waves-light" type="submit" name="action">
-                                        Cadastrar
+                                        Enviar
                                     </button> {{ erro }}
                                 </div>
                             </div>
@@ -73,7 +64,6 @@
                         no seu lugar, então o drive4u é pra você!</p>
                 </div>
             </div>
-
             <div class="col s12 m4 l4 generic-box">
                 <div class="center promo promo-example">
                     <img src="../img/empresa.png" alt="empresa" class="icon-box">

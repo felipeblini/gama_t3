@@ -271,12 +271,8 @@ footer.page-footer {
     background-position:center;
 }
 
-.header-logo {
-    padding: .2em;
-}
-
-.footer-logo {
-    margin-bottom: .2em;
+.container-nav {
+    padding: .5em;
 }
 
 .title-form {
@@ -312,4 +308,13 @@ footer.page-footer {
 .f-row {
     margin-bottom: 0px;
 }
+
+.card-panel {
+    margin: 0px;
+}
+
+.error {
+    color: #fff;
+}
+
 
