@@ -181,6 +181,13 @@ module.exports = function (grunt) {
         dest: 'www/views'
       },
       html: 'www/views/layouts/main.handlebars'
+    },
+    uncss: {
+      dist: {
+        files: {
+          'app/assets/sass/uncss/style.scss': ['app/views/**/*.handlebars', 'app/about.html']
+        }
+      }
     }
   });
 

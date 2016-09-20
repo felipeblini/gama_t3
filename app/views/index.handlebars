@@ -18,9 +18,12 @@
                             {{ erro.message }}<br>
                             <small>{{ erro.submessage }}</small>
                         </div>
-
-                        <form action="/salvalead" method="POST" autocomplete="off">
+                    
+                        <form id="leadForm" action="/salvalead" method="POST" autocomplete="off">
                             <div class="card blue-grey darken-1">
+                                <div class="progress hide">
+                                    <div class="indeterminate"></div>
+                                </div>
                                 <div class="card-content white-text">
                                     <span class="title-form center-align"> Cadastre-se </span>
                                     <div class="input-field">
@@ -35,7 +38,7 @@
                                     </div>
                                 </div>
                                 <div class="card-action">
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                                    <button id="enviar" class="btn waves-effect waves-light" type="submit" name="action">
                                         Enviar
                                     </button>
                                 </div>

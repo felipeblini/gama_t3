@@ -17,8 +17,15 @@ $(document).ready(function () {
 
 		window.setTimeout(function () {
 			$('.error').fadeOut();
-		}, 3500);
+		}, 5500);
 	}
+
+	$("#enviar").click(function() {
+		var $myForm = $('#leadForm')
+		if ($myForm[0].checkValidity()) {
+			$('.progress').removeClass('hide');
+		}
+	})
 });
 
 
