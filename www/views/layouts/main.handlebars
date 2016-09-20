@@ -3,19 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>{{title }}</title>
+  <title>Motorista particular na palma da mão | DoDrive | {{title }}</title>
+  <meta name="author" content="www.dodrive.com.br">
+  <meta name="DC.Creator" content="DoDrive" />
+  <meta name="Language" content="Portuguese">
+  <meta name="copyright" content="Motorista particular © 2016" />
+  <meta name="Designer" content="DoDrive">
+  <meta name="city" content="São Paulo">
+  <meta name="country" content="Brazil">
+  <meta name="description" content="Motorista particular é na DoDrive | Mais barato, confiável e seguro | Aumente sua renda com a gente!">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
-  <link rel="stylesheet" href="/css/style.concat.min.css">
+  <!-- build:css(.) assets/css/style.concat.min.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="components/materialize/bin/materialize.css" />
+  <!-- endbower -->
+  
+  <link rel="stylesheet" href="sass/output.css">
+  <!-- endbuild -->
 
-
+  <!-- build:remove -->
+  <script src="http://localhost:35729/livereload.js"></script>
+  <!-- endbuild -->
 </head>
 <body class="{{title}}">
   <div id="wrapper">
     {{{body}}}
   </div>
-  <script src="/js/scripts.concat.min.js"></script>
+  <!-- build:js(.) assets/js/scripts.concat.min.js -->
+  <!-- bower:js -->
+  <script src="components/jquery/dist/jquery.js"></script>
+  <script src="components/materialize/bin/materialize.js"></script>
+  <!-- endbower -->
+
+  <script src="js/script.js"></script>
+  <!-- endbuild -->
   
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
