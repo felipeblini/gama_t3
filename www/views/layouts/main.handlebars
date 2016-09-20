@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>{{title }}</title>
 
-  <link rel="stylesheet" href="/css/style.concat.min.css">
+  <!-- build:css(.) assets/css/style.concat.min.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="components/materialize/bin/materialize.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- endbower -->
+  
+  <link rel="stylesheet" href="sass/output.css">
+  <!-- endbuild -->
 
-
+  <!-- build:remove -->
+  <!--<script src="http://localhost:35729/livereload.js"></script>-->
+  <!-- endbuild -->
 </head>
 <body>
 
@@ -15,9 +24,14 @@
 
   {{> footer }}
 
-  <!--<script type="text/javascript" src="https://use.fontawesome.com/aed972c01e.js"></script>-->
+  <!-- build:js(.) assets/js/scripts.concat.min.js -->
+  <!-- bower:js -->
+  <script src="components/jquery/dist/jquery.js"></script>
+  <script src="components/materialize/bin/materialize.js"></script>
+  <!-- endbower -->
 
-  <script src="/js/scripts.concat.min.js"></script>
+  <script src="js/script.js"></script>
+  <!-- endbuild -->
   
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

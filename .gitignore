@@ -3,4 +3,3 @@ public/components
 .sass-cache
 components/
 .tmp/
-app/assets/sass/*.css
