@@ -7,11 +7,11 @@
 
  $default-color: #000;
 
-.default_color{background-color: $default-color !important}
+ .default_color{background-color: $default-color !important}
 
-.default_color_text{color: $default-color !important}
+ .default_color_text{color: $default-color !important}
 
-.icon-block {
+ .icon-block {
     padding: 0 15px;
 }
 
@@ -259,4 +259,57 @@ nav a.button-collapse {
 
 footer.page-footer {
     margin-top: 0px !important;
+}
+
+
+#index-banner {
+    background-image: url(../img/banner-home.jpg);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-position:center;
+}
+
+.header-logo {
+    padding: .2em;
+}
+
+.footer-logo {
+    margin-bottom: .2em;
+}
+
+.title-form {
+    font-size: 24px;    
+}
+
+.generic-box {
+    margin-top: 1em;
+}
+
+.generic-box img {
+    height: 60px !important;
+}
+
+.container-valores {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.form-row {
+    margin-bottom: 0px !important;
+}
+
+.rodape {
+    margin-top: 0px !important;
+    border-top : 1px solid yellow;
+}
+
+.boxes {
+    margin-bottom: 0px;
+}
+
+.f-row {
+    margin-bottom: 0px;
 }
