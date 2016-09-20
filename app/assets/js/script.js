@@ -25,7 +25,11 @@ $(document).ready(function () {
 		if ($myForm[0].checkValidity()) {
 			$('.progress').removeClass('hide');
 		}
-	})
+	});
+
+	function noBack() { window.history.forward(); }
+
+	noBack();
 });
 
 

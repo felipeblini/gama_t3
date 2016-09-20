@@ -54,6 +54,9 @@ module.exports = function(app, config) {
   
   app.use(express.static(config.root + staticFolder));
   app.use(favicon(config.root + staticFolder + '/img/favicon.ico'));
+
+  console.log('favicon.ico serving at:' + config.root + staticFolder + '/img/favicon.ico');
+
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
