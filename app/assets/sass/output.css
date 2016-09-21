@@ -61,8 +61,11 @@ input, textarea {
 .generic-text {
   color: #fff;
   text-shadow: 3px 0px 2px black;
-  padding: 7px;
   font-size: 1em; }
+
+.generic-text span {
+  display: inline;
+  background: url("../img/bkg-text-pixel.png"); }
 
 .container-valores {
   background-color: #000 !important;

@@ -71,8 +71,12 @@ input, textarea {
 .generic-text {
     color: #fff;
     text-shadow: 3px 0px 2px rgba(0, 0, 0, 1);
-    padding: 7px;
     font-size: 1em
+}
+
+.generic-text span {
+    display: inline;
+    background: url('../img/bkg-text-pixel.png');
 }
 
 .container-valores {
