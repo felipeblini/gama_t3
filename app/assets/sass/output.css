@@ -57,6 +57,11 @@ input, textarea {
 .generic-box img {
   height: 60px !important; }
 
+.generic-text {
+  color: #fff;
+  text-shadow: 3px 0px 2px black;
+  padding: 5px; }
+
 .container-valores {
   background-color: #000 !important;
   color: #fff !important; }
@@ -119,17 +124,10 @@ input, textarea {
   background-color: black; }
 
 .first {
-  margin-left: 1em;
   font-size: 33px; }
 
 .second, .third {
   font-size: 30px; }
-
-.second {
-  margin-left: 4em; }
-
-.third {
-  margin-left: 8em; }
 
 @media screen and (min-width: 320px) {
   .left-content {
@@ -138,16 +136,9 @@ input, textarea {
     background-color: black; }
 
   .first {
-    margin-left: .5em;
     font-size: 33px; }
 
   .second, .third {
-    font-size: 30px; }
-
-  .second {
-    margin-left: 1em; }
-
-  .third {
-    margin-left: 3em; } }
+    font-size: 30px; } }
 
 /*# sourceMappingURL=output.css.map */
