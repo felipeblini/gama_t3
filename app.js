@@ -3,7 +3,7 @@ var config = require('./config/config');
 //var glob = require('glob'),
 var mongoose = require('mongoose');
 
-// mongoose.connect(config.db);
+mongoose.connect(config.db);
 var db = mongoose.connection;
 
 db.on('connected', function() {
