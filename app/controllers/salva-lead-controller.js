@@ -124,9 +124,7 @@ router.post('/', function (req, res, next) {
 
         console.log('Awesome: 1 more lead has been saved successfully :)');
 
-        res.render('obrigado', {
-          title: 'Obrigado',
-        });
+        res.redirect('obrigado');
 
         return;
       }
