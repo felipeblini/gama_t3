@@ -1,0 +1,161 @@
+.default_color {
+  background-color: #000 !important; }
+
+.default_color_text {
+  color: #000 !important; }
+
+#index-banner {
+  min-height: 320px;
+  min-height: 160px;
+  position: relative;
+  background-image: url(../img/banner-home-xs.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.icon-block {
+  padding: 0 15px; }
+
+.container-nav {
+  padding: 8px; }
+
+.container-valores {
+  padding: 4rem; }
+
+small {
+  color: #ccc; }
+
+.brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  font-style: normal;
+  font-weight: 100;
+  padding: 0;
+  letter-spacing: 7px; }
+
+.card-content a {
+  color: #2196F3; }
+
+.card-content a:hover {
+  color: #2196F3; }
+
+input, textarea {
+  border-bottom: 1px solid #fff; }
+
+.container-nav {
+  padding: .5em; }
+
+.title-form {
+  font-size: 24px; }
+
+.generic-box {
+  margin-top: 1em; }
+
+.generic-box img {
+  height: 60px !important; }
+
+.generic-text {
+  color: #fff;
+  text-shadow: 3px 0px 2px black;
+  padding: 7px;
+  font-size: 1em; }
+
+.container-valores {
+  background-color: #000 !important;
+  color: #fff !important; }
+
+.form-row {
+  margin-bottom: 0px !important; }
+
+.rodape {
+  margin-top: 0px !important;
+  border-top: 1px solid yellow; }
+
+.Obrigado {
+  background: #000;
+  color: #fff; }
+
+.obrigado {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center; }
+
+.boxes {
+  margin-bottom: 0px; }
+
+.f-row {
+  margin-bottom: 0px; }
+
+.card-panel {
+  margin: 0px; }
+
+.error {
+  color: #fff; }
+
+.slideanim {
+  visibility: hidden; }
+
+.slide {
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible; }
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0%); } }
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%); } }
+.left-content {
+  display: flex;
+  flex-direction: column;
+  background-color: black; }
+
+@media screen and (min-width: 320px) {
+  #index-banner {
+    background-image: url(../img/banner-home-s.jpg);
+    min-height: 240px; }
+
+  .generic-text {
+    font-size: 1em; }
+
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    background-color: black; } }
+@media screen and (min-width: 400px) {
+  .generic-text {
+    font-size: 1.3em; } }
+@media screen and (min-width: 480px) {
+  #index-banner {
+    background-image: url(../img/banner-home-m.jpg);
+    min-height: 390px; }
+
+  .generic-text {
+    font-size: 2em; } }
+@media screen and (min-width: 780px) {
+  #index-banner {
+    background-image: url(../img/banner-home.jpg);
+    min-height: 800px; }
+
+  .generic-text {
+    font-size: 2.5em; } }
+@media screen and (min-width: 901px) {
+  .generic-text {
+    font-size: 3em; } }
+
+/*# sourceMappingURL=output.css.map */
