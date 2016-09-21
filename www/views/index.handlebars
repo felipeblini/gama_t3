@@ -1,18 +1,16 @@
 {{> head }}
 
 <!--Hero-->
-<div class="col 12 m6 left-content"> 
-    <span style="color: #fff;" class="generic-text first">OS MELHORES PREÇOS DO MERCADO!</span>
-    <span style="color: #fff;" class="generic-text second">PASSAGEIROS PAGAM MENOS</span>
-    <span style="color: #fff;" class="generic-text third">MOTORISTAS GANHAM MAIS</span>
-</div>
-
 <div class="section no-pad-bot" id="index-banner">
     <div>
-        <div class="row f-row">            
-            <div class="col s12 m6 offset-m6 right-content">
+        <div class="row f-row">  
+            <div class="container center">
+                <span class="generic-text first">OS MELHORES PREÇOS DO MERCADO!</span><br>
+                <span class="generic-text second">PASSAGEIROS PAGAM MENOS</span><br>
+                <span class="generic-text third">MOTORISTAS GANHAM MAIS</span><br>
+            </div>
+            <div class="col s12 m6 offset-m3 right-content">
                 <div class="row form-row">
-                    <div class="col s12 m10 offset-m1 l8 offset-l2">
                         <div class="erromessage hide">{{ erro.message }}</div>
                         <div class="card-panel red lighten-2 error hide">
                             {{ erro.message }}<br>
@@ -37,14 +35,14 @@
                                         <input type="email" name="email" id="email" class="with-gap" required>
                                     </div>
                                 </div>
-                                <div class="card-action">
-                                    <button id="enviar" class="btn waves-effect waves-light" type="submit" name="action">
+                                <div class="card-action center">
+                                    <button id="enviar" class="btn btn-large waves-effect waves-light" type="submit" name="action">
                                         Enviar
                                     </button>
                                 </div>
+                                
                             </div>
                         </form>
-                    </div>
                 </div>
             </div>
         </div>
