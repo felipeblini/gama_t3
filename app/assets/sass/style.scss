@@ -5,10 +5,11 @@ $default-color: #000;
 .default_color_text{color: $default-color !important}
 
 #index-banner {
-    min-height: 632px;
-    max-height: 864px;
+    min-height: 320px;
+    min-height: 160px;
     position: relative;
-    background-image: url(../img/banner-home.jpg);
+    background-image: url(../img/banner-home-xs.jpg);
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -165,6 +166,11 @@ input, textarea {
 
 
 @media screen and (min-width: 320px) {
+    #index-banner {
+        background-image: url(../img/banner-home-s.jpg);
+        min-height: 240px;
+    }
+
     .left-content {
         display: flex;
         flex-direction: column;
@@ -179,4 +185,18 @@ input, textarea {
         font-size: 30px;
     }
 
+}
+
+@media screen and (min-width: 480px) {
+    #index-banner {
+        background-image: url(../img/banner-home-m.jpg);   
+        min-height: 390px; 
+    }
+}
+
+@media screen and (min-width: 780px) {
+    #index-banner {
+        background-image: url(../img/banner-home.jpg);
+        min-height: 800px;    
+    }
 }
