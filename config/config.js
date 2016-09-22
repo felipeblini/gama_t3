@@ -2,7 +2,7 @@ var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
     env = process.env.NODE_ENV || 'development';
 
-var port = process.env.PORT || 3000; //trocar por ||
+var port = process.env.PORT  || 3000; //trocar por ||
 
 var config = {
   development: {
