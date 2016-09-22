@@ -135,8 +135,8 @@ router.post('/', function (req, res, next) {
     var transporter = nodemailer.createTransport("SMTP", {
       service: "Gmail",  // sets automatically host, port and connection security settings
       auth: {
-        user: "felipe.blini@gmail.com",
-        pass: "13012015!!"
+        user: "dodrivebrasil@gmail.com",
+        pass: "dodrive12345"
       }
     });
 
@@ -144,7 +144,7 @@ router.post('/', function (req, res, next) {
       from: '"DoDrive" <contato@dodrive.com.br>',
       to: email, // list of receivers 
       subject: 'Felipe do DoDrive - Obrigado',
-      html: 'Olá, ' + nome + '.<br><br><b>Obrigado</b> pelo cadastro. Logo retornaremos com mais informações.<br><br><br>Equipe <b>DoDrive</b>'
+      html: 'Olá, ' + nome + '.<br><br><b>Obrigado</b> pelo cadastro. Logo retornaremos com mais informações.<br><br><br>Equipe <b>DoDrive</b><br>contato@dodrive.com.br'
     };
 
     transporter.sendMail(mailOptions, function (er, info) {
