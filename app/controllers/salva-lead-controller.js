@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var validator = require("email-validator");
 var nodemailer = require('nodemailer');
 var emailExistence = require('email-existence');
-
+var hbs = require('handlebars');
 
 var Schema = mongoose.Schema;
 
@@ -141,11 +141,22 @@ router.post('/', function (req, res, next) {
       }
     });
 
+    var template = hbs.compile('<h1>Olá {{nome}}!</h1>' +
+      '<p><b>Muito obrigado</b> pelo cadastro</p>' +
+      '<p>Logo retornaremos com mais informações.</p>' +
+      '<p>Equipe <b>DoDrive</b></p>' +
+      '<small><a href="http://www.dodrive.com.br">www.dodrive.com.br</a> - curta nossa página no <a href="http://fb.com/dodrive">facebook</a> - contato@dodrive.com.br</small>');
+
+    var user = {
+        nome: nome,
+        email: email
+      };
+
     var mailOptions = {
       from: '"DoDrive" <contato@dodrive.com.br>',
-      to: email, // list of receivers 
+      to: user.email, // list of receivers 
       subject: 'Felipe do DoDrive - Obrigado',
-      html: 'Olá, ' + nome + '.<br><br><b>Obrigado</b> pelo cadastro. Logo retornaremos com mais informações.<br><br><br>Equipe <b>DoDrive</b><br>contato@dodrive.com.br'
+      html: template.html(user)
     };
 
     transporter.sendMail(mailOptions, function (er, info) {
