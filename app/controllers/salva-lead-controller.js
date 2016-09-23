@@ -132,23 +132,14 @@ router.post('/', function (req, res, next) {
   } // ./function salvaLead()
 
   function sendMail(nome, email) {
-    // var transporter = nodemailer.createTransport("SMTP", {
-    //   service: "Gmail",  // sets automatically host, port and connection security settings
-    //   auth: {
-    //     user: "dodrivebrasil@gmail.com",
-    //     pass: "d0dr1v3!!$#1000leadsporraaaa"
-    //   }
-    // });
 
-    var transporter = nodemailer.createTransport({
-      host: 'smtp.zoho.com',
-      port: 465,
-      secure: true, // use SSL
+    var transporter = nodemailer.createTransport("SMTP", {
+      service: "Zoho",  // sets automatically host, port and connection security settings
       auth: {
-          user: 'contato@dodrive.com.br',
-          pass: 'a123456z'
+        user: "contato@dodrive.com.br",
+        pass: "a123456z"
       }
-      });
+    });
 
     var mailOptions = {
       from: '"DoDrive" <contato@dodrive.com.br>',
