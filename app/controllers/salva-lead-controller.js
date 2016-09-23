@@ -144,8 +144,10 @@ router.post('/', function (req, res, next) {
     var template = hbs.compile('<h1>Olá {{nome}}!</h1>' +
       '<p><b>Muito obrigado</b> pelo cadastro</p>' +
       '<p>Logo retornaremos com mais informações.</p>' +
-      '<p>Equipe <b>DoDrive</b></p>' +
-      '<small><a href="http://www.dodrive.com.br">www.dodrive.com.br</a> - curta nossa página no <a href="http://fb.com/dodrive">facebook</a> - contato@dodrive.com.br</small>');
+      '<p>Equipe <b>DoDrive</b><br>' +
+      '<small><a href="http://www.dodrive.com.br">www.dodrive.com.br</a>' +
+      '<br>curta nossa página no <a href="http://fb.com/dodrive">facebook</a>' +
+      '<br>contato@dodrive.com.br</small></p>');
 
     var user = {
         nome: nome,
@@ -156,7 +158,7 @@ router.post('/', function (req, res, next) {
       from: '"DoDrive" <contato@dodrive.com.br>',
       to: user.email, // list of receivers 
       subject: 'Felipe do DoDrive - Obrigado',
-      html: template.html(user)
+      html: template(user)
     };
 
     transporter.sendMail(mailOptions, function (er, info) {
