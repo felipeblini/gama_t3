@@ -136,7 +136,7 @@ router.post('/', function (req, res, next) {
       service: "Gmail",  // sets automatically host, port and connection security settings
       auth: {
         user: "dodrivebrasil@gmail.com",
-        pass: "dodrive12345"
+        pass: "d0dr1v3!!$#1000leadsporraaaa"
       }
     });
 
