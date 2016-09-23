@@ -137,7 +137,7 @@ router.post('/', function (req, res, next) {
       port: 465,
       secure: true, // use SSL
       auth: {
-          user: 'blini3@hotmail.com',
+          user: 'contato@dodrive.com.br',
           pass: 'a123456z'
       }
     };
